@@ -1,14 +1,21 @@
-;;; rum-mode.el --- Major mode for Rum code
+;;; rum-mode.el --- Major mode for Rum programming language
 
-;; Copyright (C) 2017 Rum Language
-;;
+;; Copyright 2017 The Rum Language Authors.  All rights reserve
+;; Use of this source code is governed by a MIT
+;; license that can be found in the LICENSE file.
+
 ;; Authors: Avelino <t@avelino.xxx>
 ;; URL: https://github.com/rumlang/rum-mode
 ;; Version: 1.0
 ;; Keywords: rum, languages, lisp
-
+;; Package-Requires: ((emacs "24"))
+;;
 ;; This file is not part of GNU Emacs.
 
+;;; Commentary:
+
+;; rum-mode is a major mode for editing code written in Rum
+;; Language.
 
 ;;; Code:
 
