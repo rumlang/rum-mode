@@ -19,7 +19,7 @@
 
 ;;; Code:
 
-(require 'cl)
+(require 'cl-lib)
 
 (defconst rum-font-lock-keywords
   (list
