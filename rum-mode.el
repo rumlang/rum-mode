@@ -6,7 +6,7 @@
 
 ;; Authors: Avelino <t@avelino.xxx>
 ;; URL: https://github.com/rumlang/rum-mode
-;; Version: 1.0
+;; Version: 1.2
 ;; Keywords: rum, languages, lisp
 ;; Package-Requires: ((emacs "24"))
 ;;
@@ -33,20 +33,33 @@
      "else"
      "import"
      "let"
-     "map"
      "return"
      "struct"
-     "def"
      "case"
      "default"
      "print"
      "sprint"
-     "lambda"
+     "lambda") 'words))
+
+;; all rum functions name
+(defconst rum-functions
+  (regexp-opt
+   '("def") 'words))
+
+;; all rum types name
+(defconst rum-types
+  (regexp-opt
+   '("struct"
+     "map"
      "array") 'words))
 
+;; create the list for font-lock.
+;; each category of keyword is given a particular face
 (defconst rum-font-lock-keywords
   (list
    `(,rum-keywords . font-lock-builtin-face)
+   `(,rum-functions . font-lock-function-name-face)
+   `(,rum-types . font-lock-type-face)
    `(,"\\<\\(struct\\)\\s-+\\(\\w+\\)\\>"
      (1 font-lock-keyword-face)
      (2 font-lock-type-face))
