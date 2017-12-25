@@ -19,13 +19,40 @@
 
 ;;; Code:
 
-(require 'cl-lib)
+(eval-when-compile
+  (require 'cl-lib))
+
+;; all rum keywords
+(defconst rum-keywords
+  (regexp-opt
+   '("package"
+     "breack"
+     "continue"
+     "for"
+     "if"
+     "else"
+     "import"
+     "let"
+     "map"
+     "return"
+     "struct"
+     "def"
+     "case"
+     "default"
+     "print"
+     "sprint"
+     "lambda"
+     "array") 'words))
 
 (defconst rum-font-lock-keywords
   (list
-   '("\\<\\(package\\|break\\|continue\\|for\\|if\\|else\\|import\\|let\\|map\\|return\\|struct\\|def\\|case\\|default\\|print\\|sprintf\\|def\\|lambda\\|array\\)\\>" . font-lock-builtin-face)
-   '("\\<\\(struct\\)\\s-+\\(\\w+\\)\\>" (1 font-lock-keyword-face) (2 font-lock-type-face))
-   '("\\<\\(def\\)\\s-+\\(\\w+\\)\\>" (1 font-lock-keyword-face) (2 font-lock-function-name-face))))
+   `(,rum-keywords . font-lock-builtin-face)
+   `(,"\\<\\(struct\\)\\s-+\\(\\w+\\)\\>"
+     (1 font-lock-keyword-face)
+     (2 font-lock-type-face))
+   `(,"\\<\\(def\\)\\s-+\\(\\w+\\)\\>"
+     (1 font-lock-keyword-face)
+     (2 font-lock-function-name-face))))
 
 (define-derived-mode rum-mode lisp-mode "rum"
   "Major mode for editing rum script"
