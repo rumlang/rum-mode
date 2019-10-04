@@ -5,7 +5,7 @@ Emacs major mode for editing Rum
 
 
 `rum-mode` is available on the two major community maintained repositories -
-[MELPA STABLE](melpa-stable.milkbox.net) and [MELPA](http://melpa.milkbox.net).
+[MELPA STABLE](http://melpa-stable.milkbox.net) and [MELPA](https://melpa.milkbox.net).
 
 You can install `rum-mode` with the following command:
 
